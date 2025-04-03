@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Proxy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #000;
+            }
+        }
+
+        .container {
+            text-align: center;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .container {
+                background: #1e1e1e;
+                color: #ffffff;
+            }
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            h2 {
+                color: #fff;
+            }
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function proxyYouTube() {
+            let inputUrl = document.getElementById("youtubeUrl").value;
+            if (!inputUrl.includes("youtube.com")) {
+                alert("Enter a valid YouTube URL");
+                return;
+            }
+            let proxyUrl = `https://yt-proxy-nintendooi2-nintendoboi2s-projects.vercel.app/proxy?url=${encodeURIComponent(inputUrl)}`;
+            window.location.href = proxyUrl;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>YouTube Proxy</h2>
+        <input type="text" id="youtubeUrl" placeholder="Enter YouTube URL">
+        <button onclick="proxyYouTube()">Go</button>
+    </div>
+</body>
+</html>

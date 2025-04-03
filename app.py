@@ -1,5 +1,5 @@
+from flask import Flask, render_template, request, Response
 import requests
-from flask import Flask, request, Response
 
 app = Flask(__name__)
 
@@ -7,7 +7,7 @@ YOUTUBE_BASE = "https://www.youtube.com"
 
 @app.route("/")
 def home():
-    return "YouTube Proxy is Running!"
+    return render_template("index.html")
 
 @app.route("/proxy")
 def proxy():
