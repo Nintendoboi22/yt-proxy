@@ -3,8 +3,6 @@ import requests
 
 app = Flask(__name__)
 YOUTUBE_BASE = "https://www.youtube.com"
-PUBLIC_FOLDER = "templates"
-
 @app.route("/")
 def youtube():
     try:
