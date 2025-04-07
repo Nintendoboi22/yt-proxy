@@ -1,4 +1,3 @@
-flask
-flask_cors
-requests
-youtube_dl
+Flask==2.3.2
+requests==2.31.0
+Werkzeug==2.3.7
