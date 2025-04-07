@@ -1,5 +1,6 @@
 from flask import Flask, request, Response
 import requests
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 app = Flask(__name__)
 YOUTUBE_BASE = "https://www.youtube.com"
@@ -28,8 +29,5 @@ def not_found(e):
     except Exception as e:
         return str(e), 500
 
-from flask import Flask
-from werkzeug.middleware.proxy_fix import ProxyFix
-
 app.wsgi_app = ProxyFix(app.wsgi_app)
-handler = app
+handler = app  
